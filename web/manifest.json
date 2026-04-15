@@ -1,6 +1,6 @@
 {
-    "name": "rastro_x",
-    "short_name": "rastro_x",
+    "name": "Orientacion",
+    "short_name": "Orientacion",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

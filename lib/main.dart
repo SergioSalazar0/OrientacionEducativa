@@ -4,9 +4,5 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app.dart';
 
 void main() {
-  runApp(
-    const ProviderScope(
-      child: RastroXApp(),
-    ),
-  );
+  runApp(const ProviderScope(child: OrientacionApp()));
 }
