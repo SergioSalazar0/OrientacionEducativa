@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#db7706",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#231a0f",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Rastro X - Archaeological Adventure</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Subtle Old Map Background Layer -->
+<div class="fixed inset-0 opacity-10 pointer-events-none" data-alt="Subtle light colored old map texture background" data-location="Mesoamerica" style='background-image: url("https://placeholder.pics/svg/300");'>
+</div>
+<!-- Top Header Area -->
+<div class="relative flex items-center p-4 pb-2 justify-between z-10">
+<div class="text-primary flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</div>
+<div class="flex-1"></div>
+<div class="text-primary flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-3xl">settings</span>
+</div>
+</div>
+<!-- Hero Section / Logo -->
+<div class="relative flex w-full grow items-center justify-center p-6 z-10">
+<div class="flex flex-col items-center w-full max-w-sm">
+<div class="w-full aspect-square flex items-center justify-center mb-8">
+<img alt="Rastro X Logo" class="w-full h-auto drop-shadow-2xl" data-alt="Archaeological exploration game logo Rastro X with golden compass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcL25vuE7JvsI_uL9aQXTfDi2HE_C94ejsg6pl-X4YfGBo1Qs6Ou_fgGoypNgrSpidxEKeSr3y_sKII9u7cJzGRsBzGB-Yo-hDASGhmfoGjYSh2YZjJVKviQeunIyk86E5FH30vJxhpV7NBOOFc5-bUwZO39Aq0Pk8NnXIRs0-ueHoTjelwGrFQ6wjxzuowTShDQNyYzCvmdvZdinDRh3L-Jl3q6BTLDRMEoDHEi03hxIQYTn5X-GFZb8MoOCFH7PzGoDfAm3X-Mo"/>
+</div>
+<h1 class="text-3xl font-extrabold tracking-tight text-center mb-2 text-slate-900 dark:text-slate-100 uppercase">
+                    Rastro X
+                </h1>
+<p class="text-primary/80 text-sm font-medium leading-normal pb-8 text-center uppercase tracking-widest">
+                    Explora las ruinas olvidadas
+                </p>
+</div>
+</div>
+<!-- Action Buttons Section -->
+<div class="relative z-10 pb-12 px-6 flex flex-col gap-4 max-w-md mx-auto w-full">
+<!-- Primary Action -->
+<div class="flex w-full">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-16 px-8 bg-primary text-white text-lg font-extrabold leading-normal tracking-[0.05em] shadow-lg shadow-primary/30 active:scale-95 transition-transform">
+<span class="truncate">INICIAR EL JUEGO</span>
+</button>
+</div>
+<!-- Secondary Actions -->
+<div class="flex gap-4 w-full">
+<button class="flex flex-1 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-xl h-14 px-4 bg-primary/10 border border-primary/20 text-slate-900 dark:text-slate-100 text-base font-bold leading-normal active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">history</span>
+<span class="truncate text-sm">Historial</span>
+</button>
+<button class="flex flex-1 cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-xl h-14 px-4 bg-primary/10 border border-primary/20 text-slate-900 dark:text-slate-100 text-base font-bold leading-normal active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">groups</span>
+<span class="truncate text-sm">Equipo</span>
+</button>
+</div>
+</div>
+<!-- Decorative Footer Element -->
+<div class="relative z-10 flex justify-center pb-8 opacity-40">
+<div class="h-1 w-24 bg-primary/30 rounded-full"></div>
+</div>
+</div>
+</body></html>

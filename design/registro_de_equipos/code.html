@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#db7706",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#231a0f",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .ledger-line {
+            background-image: linear-gradient(transparent 31px, #e9dcce 32px);
+            background-size: 100% 32px;
+        }
+        .field-note-texture {
+            background-color: #f8f7f5;
+            background-image: radial-gradient(#db770622 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden max-w-2xl mx-auto shadow-xl border-x border-primary/10">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-primary/10">
+<div class="text-primary flex size-12 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Registro de Expedición</h2>
+<div class="size-12"></div>
+</div>
+<div class="field-note-texture p-4 space-y-8 pb-32">
+<!-- Avatar Library Section -->
+<section class="bg-white/50 dark:bg-white/5 p-4 rounded-xl border border-primary/20">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary">person_search</span>
+<h3 class="text-slate-900 dark:text-slate-100 font-bold uppercase tracking-wider text-sm">Biblioteca de Exploradores</h3>
+</div>
+<div class="grid grid-cols-4 gap-3">
+<div class="aspect-square rounded-full border-2 border-primary bg-primary/10 flex items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+<img alt="Explorador con sombrero y parche" data-alt="Cartoon explorer with hat and eye patch" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc99EGBOchFRaMFgwMKePhNrUg3iOr6qY5nBKTU9kQ60kv_bj0DY_LWdMGrzhR8MtHQnf7tAjZu8KefkxQ2l2knP5zi-KjiNEltGBeNJfhKeGMFDLOXMIDELXblheluT8U0fMwJDSvYGy5-SHfCguVPdShYyOw1tM6X3WmuhT4JfzplfaircAcYnxniG7NMae5WYuwnRGMDLyjgkUjwcuo29Le4vKQFasCP6KUxIRb04-InovErLWpcJNY0IPd2PNn3oP_W8f8U_c"/>
+</div>
+<div class="aspect-square rounded-full border-2 border-transparent bg-primary/5 flex items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+<img alt="Explorador con gorro de invierno" data-alt="Cartoon explorer with winter hat and goggles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlZ79gjpkoTmWXGlSwPyeCMoSztBKspJMK5O3qtTthpqtlQDWqGpboCAoChhzmvjbSPqJbv-i2awRrPSygKyBoztk_iH-QC6QFyDFAH6DKOAKDcCBZEg4sMHyXYigaQL5F3fXrhl45N0yLeT9Rgv0OAwZYRMpdNge-ZOFLDatb2MywQZtPLhR0cMgjgLcYKA2Jis3vha-PD_-tSYKFndjYUo1RvZjNA99_7imw4bPmLZlpWlOpKUOc9YaTwq_gM7jeBk66io1AGT8"/>
+</div>
+<div class="aspect-square rounded-full border-2 border-transparent bg-primary/5 flex items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+<img alt="Explorador con turbante" data-alt="Explorer avatar with turban and glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPAz_mJAaurypi2HBsVnOdqYU_xd65biTUHzBbvMitTILw0eGZpBc0l-PMLjktWNr4m9c8t3kPJi9kZsz59h4idOUKHJBSkIkAP059Xtg4kmxfc2UBfwQz_ZqpSXgk4vhWZBGAZxtfFTICOaqyBOZztHsigfBKWWl801Fvnal_TwxJynMl3Lj78ch93DRl13XRPnp0AaGkCvXXhgyqbx5RsfTdL5cmOaO9PdQL3blN7UU6l0F-7Uyz5KVYgZI71aCWjgzzPHcu8zI"/>
+</div>
+<div class="aspect-square rounded-full border-2 border-transparent bg-primary/5 flex items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+<img alt="Explorador con lentes redondos" data-alt="Explorer avatar with round adventure glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT2TqmhGrOfXiuNF8Fa262HCP_W_Th4_0_D_mpTcX1lf1K1WQqlWkNfFPdcWmomCh_ItfvporzofZXmW2ztWRZ0TDkg7mqz_Y4a4ne51PtvViFu12uPX6F5SsvVVwuZmP2XQ8fYQ2bGLj8CVWqQ1v88ZIzZd7HPnWaet_hrP94vmI-vjFw-VhFAyqoMM-05uVhNw0XRCCj0eiGISN4MGCYeq2PX6O5yEvRGvIJzMoXnhOtzDtfndQhubVgXoTNfzPYCE4Pbb8Pa4s"/>
+</div>
+<div class="aspect-square rounded-full border-2 border-transparent bg-primary/5 flex items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+<img alt="Exploradora con hijab" data-alt="Female explorer avatar with brown hijab" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMSCQiYzHG2MZdb_OXz6uxRKcqum9vc1ifN-nw73Q79Xt95qmhyn14q2oY7JojvtF7hpVK32t0sAwcpyrMuYuptlXk5CrhAm61TPRtVh9Gg1brpKOzBXqjC9WZ669j1Ym4q6MF4-zWf0uSzm8429fgtTT2lAhuSFC_Da7ySJqTDAUEqsiw3LbJwQ8Iu_1Ng3tFOUyD8fHipuZ4LADojCO80m_qy7M-i9-ivKSSuPeSSyj60Laij2pY206QFhKh1IvhKHyWrotwuYc"/>
+</div>
+<div class="aspect-square rounded-full border-2 border-transparent bg-primary/5 flex items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+<img alt="Explorador con cabello corto" data-alt="Young male explorer with short hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIMXlj7wjylBSQyHcNLY-02emRpMAVH41tUzvotlU3g-zmc2LtUGapQsre6IyBC9zZfByVarpLyaqlgf0DvrkKDVvrJEWAw_8mqjrKC_hlCBsWzXt14eynBeXl7B3HF502JeewSSLjXnOeGVSz1JZkqvzeVvwRGrFPLnslp52gUKfomVtDI7zFBjVkQu1CHepGboeksQ_vBBxVwKqCy5U5H-kLaZY4FP_ioGxAdboGOCBaM0yLMfhEZ-rLE-ktbCdEsE7AnjvRNXc"/>
+</div>
+<div class="aspect-square rounded-full border-2 border-transparent bg-primary/5 flex items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+<img alt="Exploradora con cabello largo" data-alt="Female explorer with long hiking hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuColW23LoeqROf18mWZX8Rl-QBLvvmpZDXQ-ZTLPfAD_8I1U6faEtDwzROvifaYryPumMg21UgwM4gZnEu_gwwv3hNAdQc1VcFMt6B24jPOTQ1uI8y2Mpei354s1RZ2ckDW5sd93EUa41AkgqKWVDXwOGTs61Qmz3ejSni9HMyLVAu2Erw3qjTNJvh-V-ViTe3QC3OFf74Dmh-chlXTzZQRDaG4z0pPeS_s2imcQ44UWBN1JYAqdkt9Ntbyw-YzNeVmWbeAYU6TGQE"/>
+</div>
+<div class="aspect-square rounded-full border-2 border-transparent bg-primary/5 flex items-center justify-center overflow-hidden cursor-pointer hover:scale-105 transition-transform">
+<img alt="Explorador rapado" data-alt="Strong male explorer with shaved head" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpe3WACAQkAzowhRYMKV1Y1RHSTmD_xSSQIWQ9rQmJedayh7yzumuAG8274l2AgqT3XkDceCJCmFUiJB7bLgXva0AYkE1LVFYG9rBA7zq792CWnmQ-g2UXEBrPgwLSxmQgpcOrk5cgtBwEnnvHK25DEsoeAlSBx2w4yhsT-20388si2fTd6kdPTpgc4ILkfDQjx2oOBaLp8cio3exBdEypSWTI6ljlh2CNCHtbqklOk35EQE_xRfHVDHbIfUhbW-4ihGFOkd5N5Ec"/>
+</div>
+</div>
+</section>
+<!-- Team 1 Section -->
+<section class="bg-[#fefcf8] dark:bg-slate-800/20 p-6 rounded-lg shadow-sm border border-[#e9dcce] dark:border-primary/20 relative">
+<div class="absolute -top-3 left-6 bg-primary px-3 py-1 rounded text-white text-xs font-bold uppercase tracking-widest">Team Alpha</div>
+<div class="flex items-center justify-between mb-6 pt-2">
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-black italic tracking-tight">EQUIPO 01</h2>
+<span class="material-symbols-outlined text-primary/40">explore</span>
+</div>
+<div class="space-y-4 ledger-line pt-2">
+<!-- Player 1 -->
+<div class="flex items-center gap-4 py-2">
+<div class="size-14 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center overflow-hidden">
+<img alt="Jugador 1" class="w-full h-full object-cover" data-alt="Player one avatar in circular frame" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFSd3H6lpPlMsPoIjxsG2xdwdtZxYZExGeHOewvsdMmphYgbp16QWx4-e26RZnrIMKwFoNSXShZtQ9s4RmZCuCmm7ZDj4_-Se0QWSVEFTvmC6Qe3KtmmEJInDhtHOKYSKzHlruXhIwrMIeg1zChDO0RSZU69cI4sRYkPGKSuSNnpVQMIza-tABwLRRfbAOragCnH4Ygvf0yPnjGvWStyASoewlQmS5dsK9Rybbplcqz30_Z4wadVZ_2Ec7Hg-ZgNgAIBnov1wUXU0"/>
+</div>
+<div class="flex-1">
+<input class="w-full bg-transparent border-none border-b border-dashed border-primary/30 focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 font-medium italic" placeholder="Apodo del Explorador 1..." type="text"/>
+</div>
+</div>
+<!-- Player 2 -->
+<div class="flex items-center gap-4 py-2">
+<div class="size-14 rounded-full bg-primary/5 border-2 border-dashed border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/30">add_a_photo</span>
+</div>
+<div class="flex-1">
+<input class="w-full bg-transparent border-none border-b border-dashed border-primary/30 focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 font-medium italic" placeholder="Apodo del Explorador 2..." type="text"/>
+</div>
+</div>
+<!-- Player 3 -->
+<div class="flex items-center gap-4 py-2">
+<div class="size-14 rounded-full bg-primary/5 border-2 border-dashed border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/30">add_a_photo</span>
+</div>
+<div class="flex-1">
+<input class="w-full bg-transparent border-none border-b border-dashed border-primary/30 focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 font-medium italic" placeholder="Apodo del Explorador 3..." type="text"/>
+</div>
+</div>
+<!-- Player 4 -->
+<div class="flex items-center gap-4 py-2">
+<div class="size-14 rounded-full bg-primary/5 border-2 border-dashed border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/30">add_a_photo</span>
+</div>
+<div class="flex-1">
+<input class="w-full bg-transparent border-none border-b border-dashed border-primary/30 focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 font-medium italic" placeholder="Apodo del Explorador 4..." type="text"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Team 2 Section -->
+<section class="bg-[#fefcf8] dark:bg-slate-800/20 p-6 rounded-lg shadow-sm border border-[#e9dcce] dark:border-primary/20 relative">
+<div class="absolute -top-3 left-6 bg-slate-800 dark:bg-primary px-3 py-1 rounded text-white text-xs font-bold uppercase tracking-widest">Team Bravo</div>
+<div class="flex items-center justify-between mb-6 pt-2">
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-black italic tracking-tight">EQUIPO 02</h2>
+<span class="material-symbols-outlined text-primary/40">map</span>
+</div>
+<div class="space-y-4 ledger-line pt-2">
+<div class="flex items-center gap-4 py-2">
+<div class="size-14 rounded-full bg-primary/5 border-2 border-dashed border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/30">add_a_photo</span>
+</div>
+<div class="flex-1">
+<input class="w-full bg-transparent border-none border-b border-dashed border-primary/30 focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 font-medium italic" placeholder="Apodo del Explorador 1..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4 py-2">
+<div class="size-14 rounded-full bg-primary/5 border-2 border-dashed border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/30">add_a_photo</span>
+</div>
+<div class="flex-1">
+<input class="w-full bg-transparent border-none border-b border-dashed border-primary/30 focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 font-medium italic" placeholder="Apodo del Explorador 2..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4 py-2">
+<div class="size-14 rounded-full bg-primary/5 border-2 border-dashed border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/30">add_a_photo</span>
+</div>
+<div class="flex-1">
+<input class="w-full bg-transparent border-none border-b border-dashed border-primary/30 focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 font-medium italic" placeholder="Apodo del Explorador 3..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4 py-2">
+<div class="size-14 rounded-full bg-primary/5 border-2 border-dashed border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary/30">add_a_photo</span>
+</div>
+<div class="flex-1">
+<input class="w-full bg-transparent border-none border-b border-dashed border-primary/30 focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 font-medium italic" placeholder="Apodo del Explorador 4..." type="text"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Footer Action -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl bg-white/80 dark:bg-background-dark/80 backdrop-blur-md p-6 border-t border-primary/10">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-3 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+<span>CONFIRMAR EQUIPOS</span>
+</button>
+</div>
+</div>
+</body></html>
