@@ -74,22 +74,6 @@ class _HomeScreenState extends State<HomeScreen>
     );
   }
 
-  void _loginAs(String role) {
-    final email = role == 'admin'
-        ? 'admin@escuela.com'
-        : role == 'orientador'
-        ? 'orientador@escuela.com'
-        : 'usuario@ejemplo.com';
-
-    _emailController.text = email;
-    setState(() {
-      _errorText = null;
-    });
-    context.go(
-      '${AppRouter.dashboard}?role=$role&email=${Uri.encodeComponent(email)}',
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -194,36 +178,6 @@ class _HomeScreenState extends State<HomeScreen>
                           ),
                         ),
                         child: const Text('Ingresar'),
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    Wrap(
-                      spacing: 12,
-                      runSpacing: 12,
-                      children: [
-                        OutlinedButton(
-                          onPressed: () => _loginAs('admin'),
-                          child: const Text('Administrador'),
-                        ),
-                        OutlinedButton(
-                          onPressed: () => _loginAs('orientador'),
-                          child: const Text('Orientador'),
-                        ),
-                        OutlinedButton(
-                          onPressed: () => _loginAs('usuario'),
-                          child: const Text('Usuario'),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
-                    Text(
-                      '''Correo de prueba:
-admin@escuela.com → Administrador
-orientador@escuela.com → Orientador
-cualquier@ejemplo.com → Usuario común''',
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color: Colors.grey[700],
-                        height: 1.4,
                       ),
                     ),
                   ],
